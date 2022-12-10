@@ -1,3 +1,5 @@
+import { registerImage } from "./lazy";
+
 const maximum = 122,
   minimum = 1;
 const random = () => Math.floor(Math.random() * (maximum - minimum));
@@ -24,6 +26,7 @@ const addButton = document.querySelector("button");
 const addImage = () => {
   const newImage = createImageNode();
   container.appendChild(newImage);
+  registerImage(newImage);
 };
 addButton.addEventListener("click", addImage);
 
